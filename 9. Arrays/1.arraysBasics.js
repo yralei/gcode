@@ -11,5 +11,6 @@ console.log(sixthEl);
 
 console.log(students[0]);
 
-const arrLength = students.length;
-console.log(students[arrLength - 1]);
+console.log(students[students.length - 1]);
+
+console.log(students.length);
