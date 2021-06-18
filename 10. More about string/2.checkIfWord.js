@@ -10,19 +10,22 @@ function isLetter(c) {
  */
 function isValidWord(str) {
   const strArr = str.split('');
-  for (let i = 0; i < strArr.length; i += 1) {
-    if (!isLetter(strArr[i])) {
-      return false;
+  if (str.length > 2) {
+    for (let i = 0; i < strArr.length; i++) {
+      if (!isLetter(strArr[i])) {
+        return false;
+      }
     }
+    return true
   }
-  return true;
+  return false;
 }
 
 // examples
-isLetter('h'); // ==> true
-isLetter('W'); // ==> true
-isLetter('@'); // ==> false
-isLetter('1'); // ==> false
+console.log(isLetter('h')); // ==> true
+console.log(isLetter('W')); // ==> true
+console.log(isLetter('@')); // ==> false
+console.log(isLetter('1')); // ==> false
 
 console.log(isValidWord('hello')); // ==> true
 console.log(isValidWord('Hello')); // ==> true

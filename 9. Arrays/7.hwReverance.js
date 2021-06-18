@@ -11,4 +11,4 @@ return result
 
 console.log(reverseArray([11, 4, 8, 3])); // ==> [3, 8, 4, 11]
 console.log(reverseArray([])); // ==> []
-reverseArray([100, 50]); // ==> [50, 100]
+console.log(reverseArray([100, 50])); // ==> [50, 100]

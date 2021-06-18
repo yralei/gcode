@@ -9,17 +9,18 @@ function getRevenue(sales) {
 }
 let sales = [25, 40, 10, 58];
 console.log(getRevenue(sales));
-/**
- * @param {number[]} sales
- * @param {number} plannedRevenue
- * @return {boolean}
- */
+
 function checkRevenue(sales, plannedRevenue) {
-  getRevenue(sales) >= plannedRevenue;
-  return
+  let result;
+  if (getRevenue(sales) >= plannedRevenue) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result
 }
 const plannedRevenue = 500;
-console.log(checkRevenue(sales));
+console.log(checkRevenue([25, 40, 10, 58], 100));
 // examples
 getRevenue([25, 40, 10, 58]); // ===> 133
 checkRevenue([25, 40, 10, 58], 100); // ===> true
