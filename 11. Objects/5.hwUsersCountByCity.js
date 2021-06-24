@@ -1,54 +1,57 @@
 'use strict';
 
-const players = [
+/**
+ * @param {object[]} users
+ * @return {object}
+ */
+function usersCountByCity(users) {
+  const result = {};
+  for (let i = 0; i < users.length; i++) {
+    const el = users[i];
+    let someCity = el.city;
+    let key = Object.keys(result)
+    if (key.includes(someCity)) {
+      result [someCity] += 1;
+    } else {
+      result [someCity] = 1
+    }
+
+  }
+  return result;
+}
+
+// examples
+const users = [
   {
-    name: 'Jason Mount',
-    birthdate: '19.12.1993',
-    country: 'Deutschland',
-    number: '21',
-    team: 'Manchester United',
-    position: 'MF',
-    goals: 4,
+    id: 888,
+    name: 'Denis',
+    age: 44,
+    city: 'Kyiv',
   },
   {
-    name: 'Jason Mount',
-    birthdate: '01.01.2001',
-    country: 'Deutschland',
-    number: '16',
-    team: 'Manchester United',
-    position: 'MF',
-    goals: 0,
+    id: 333,
+    name: 'Alex',
+    age: 33,
+    city: 'Lviv',
   },
   {
-    name: 'Finne Bard',
-    birthdate: '13.02.1995',
-    country: 'Norwegen',
-    number: '26',
-    position: 'FW',
-    team: 'Fulham United',
-    goals: 1,
+    id: 392,
+    name: 'Nastya',
+    age: 22,
+    city: 'Kyiv',
   },
   {
-    name: 'Gerhardt Yannick',
-    birthdate: '13.03.1994',
-    country: 'Deutschland',
-    number: 31,
-    position: 'MF',
-    team: 'Liverpool',
-    goals: 8,
+    id: 123,
+    name: 'Violetta',
+    age: 15,
+    city: 'Odesa',
+  },
+  {
+    id: 640,
+    name: 'Mykola',
+    age: 31,
+    city: 'Lviv',
   },
 ];
 
-
-  let results = players.map(function(item, index, array) {
-    return item['name', 'team', 'goals'];
-  });
-  console.log(results);
-
-// ===>
-// [
-//   { name: 'Jason Mount', team: 'Manchester United', goals: 4 },
-//   { name: 'Jason Mount, team: 'Manchester United', goals: 0 },
-//   { name: 'Finne Bard', team: 'Fulham United', goals: 1 },
-//   { name: 'Gerhardt Yannick', team: 'Liverpool', goals: 8 },
-// ];
+console.log(usersCountByCity(users)); // ===> { 'Kyiv': 2, 'Lviv': 2, 'Odesa': 1 }
