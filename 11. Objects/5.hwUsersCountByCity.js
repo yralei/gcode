@@ -1,19 +1,5 @@
 'use strict';
 
-/**
- * @param {object[]} players
- * @return {object[]}
- */
-function getGoalsStat(players) {
-  let results = [];
-  for (let i in players) {
-    console.log(i)
-  }
-  return results;
-
-}
-
-// examples
 const players = [
   {
     name: 'Jason Mount',
@@ -53,7 +39,12 @@ const players = [
   },
 ];
 
-getGoalsStat(players);
+
+  let results = players.map(function(item, index, array) {
+    return item['name', 'team', 'goals'];
+  });
+  console.log(results);
+
 // ===>
 // [
 //   { name: 'Jason Mount', team: 'Manchester United', goals: 4 },
